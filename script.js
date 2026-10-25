@@ -5,7 +5,7 @@ const CONFIG = {
   email: "of.turundushub@gmail.com",
   // Formspree form address, e.g. "https://formspree.io/f/abcdwxyz".
   // While empty, the form falls back to opening the visitor's email app.
-  formEndpoint: ""
+  formEndpoint: "https://formspree.io/f/myeeegko"
 };
 
 /* 2) ENGLISH TEXT. Estonian is the text already written in index.html. */
