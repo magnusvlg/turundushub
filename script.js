@@ -1,8 +1,8 @@
-/* ===== Veebihub – script ===== */
+/* ===== Turundushub – script ===== */
 
 /* 1) CONTACT DETAILS – replace the two placeholders below, nothing else needs editing. */
 const CONFIG = {
-  email: "[EMAIL]",   // e.g. "info@veebihub.ee"
+  email: "[EMAIL]",   // e.g. "info@turundushub.ee"
   phone: "[PHONE]"    // e.g. "+372 5555 5555"
 };
 
@@ -77,14 +77,14 @@ const MSG = {
     invalid: "Palun täitke nimi, e-post ja sõnum.",
     noContact: "E-posti aadress pole veel lisatud. Palun helistage meile.",
     opened: "Avasime teie e-posti programmi. Vajutage seal „Saada“.",
-    subjectPrefix: "Päring Veebihubi kodulehelt",
+    subjectPrefix: "Päring Turundushubi kodulehelt",
     lines: ["Nimi", "Ettevõte", "E-post", "Telefon", "Teenus"]
   },
   en: {
     invalid: "Please fill in your name, email and message.",
     noContact: "Our email address has not been added yet. Please call us.",
     opened: "We opened your email app. Press “Send” there.",
-    subjectPrefix: "Enquiry from the Veebihub website",
+    subjectPrefix: "Enquiry from the Turundushub website",
     lines: ["Name", "Business", "Email", "Phone", "Service"]
   }
 };
@@ -100,8 +100,8 @@ i18nNodes.forEach(n => { ET[n.dataset.i18n] = ET[n.dataset.i18n] ?? n.innerHTML;
 const META = {
   et: { title: document.title, desc: document.querySelector('meta[name="description"]').content },
   en: {
-    title: "Veebihub – Websites for small businesses",
-    desc: "Veebihub is an Estonian student company that builds websites for small businesses, maintains them, and helps customers find you on Google and Google Maps."
+    title: "Turundushub – Websites for small businesses",
+    desc: "Turundushub is an Estonian student company that builds websites for small businesses, maintains them, and helps customers find you on Google and Google Maps."
   }
 };
 
