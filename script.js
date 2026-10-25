@@ -49,6 +49,7 @@ const EN = {
   "team.title": "A young, motivated team", "team.sub": "You work directly with us. Not a sales department, but the people who build your site.",
   "team.seb.role": "Web developer", "team.seb.p": "About 4 years of web development experience. Responsible for site structure and quality.",
   "team.dan.role": "Web developer", "team.dan.p": "About 1 year of web development experience. Brings fresh ideas and looks after the details.",
+  "team.mag.role": "[Role]", "team.cha.role": "[Role]", "team.member.p": "[Short bio and experience go here]",
   "team.photo": "[Real photo goes here]",
 
   "work.title": "Our work", "work.sub": "Our real projects will appear here.", "work.ph": "Sample image",
