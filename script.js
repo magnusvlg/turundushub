@@ -113,6 +113,7 @@ function setLang(next) {
     const text = dict[n.dataset.i18n];
     if (text !== undefined) n.innerHTML = text;
   });
+  document.getElementById("form-note").className = "form-note full"; // clear old error/success colour
   document.title = META[next].title;
   document.querySelector('meta[name="description"]').content = META[next].desc;
   document.querySelectorAll(".lang-switch button").forEach(b => {
