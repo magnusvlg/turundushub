@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veebihub – Koduleht väikeettevõttele</title>
+  <meta name="description" content="Veebihub on Eesti õpilasfirma, mis teeb väikeettevõtetele kodulehti, hooldab neid ning aitab leida kliente Google'is ja Google Mapsis.">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Cpath d='M9 10l5 12 2-5 2 5 5-12' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="logo" href="#top" aria-label="Veebihub">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 10l5 12 2-5 2 5 5-12" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Veebihub
+    </a>
+    <nav class="main-nav" aria-label="Peamenüü">
+      <a href="#teenused" data-i18n="nav.services">Teenused</a>
+      <a href="#hinnad" data-i18n="nav.pricing">Hinnad</a>
+      <a href="#meeskond" data-i18n="nav.team">Meeskond</a>
+      <a href="#tood" data-i18n="nav.work">Tööd</a>
+      <a href="#kkk" data-i18n="nav.faq">KKK</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Keel / Language">
+        <button type="button" data-lang="et" aria-pressed="true">ET</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#kontakt" data-i18n="cta.quote">Küsi pakkumist</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Õpilasfirma · Eesti</p>
+      <h1 data-i18n="hero.title">Aitame väikeettevõttel leida rohkem kliente internetis.</h1>
+      <p class="lead" data-i18n="hero.sub">Teeme kiire, selge ja ilusa kodulehe. Hoolitseme, et teid leitaks Google'is ja Google Mapsis.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#kontakt" data-i18n="cta.quote">Küsi pakkumist</a>
+        <a class="btn btn-secondary" href="#hinnad" data-i18n="cta.prices">Vaata hindu</a>
+      </div>
+      <ul class="trust-row">
+        <li><svg class="ico-sm" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="trust.reply">Vastame 24 tunni jooksul</span></li>
+        <li><svg class="ico-sm" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="trust.prices">Selged hinnad</span></li>
+        <li><svg class="ico-sm" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><span data-i18n="trust.direct">Räägite otse meiega</span></li>
+      </ul>
+    </div>
+
+    <!-- Mockup: laptop + phone, built from HTML/CSS (no images to load) -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="laptop">
+        <div class="laptop-screen">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <div class="mock-site">
+            <div class="mock-nav"><b></b><span></span><span></span><span></span></div>
+            <div class="mock-hero">
+              <div class="mock-text">
+                <em></em><em class="w80"></em><em class="w60"></em>
+                <u></u>
+              </div>
+              <div class="mock-img"></div>
+            </div>
+            <div class="mock-cards"><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="mock-site mock-site-phone">
+          <div class="mock-nav"><b></b><span></span></div>
+          <div class="mock-img tall"></div>
+          <em></em><em class="w80"></em><u></u>
+          <div class="mock-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <span>★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. PROBLEM / BENEFIT ============ -->
+<section class="section section-alt" id="miks">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="why.title">Miks väikeettevõttele on hea kodulehte vaja?</h2>
+      <p data-i18n="why.sub">Enne kui klient helistab, otsib ta teid üles. Mida ta siis leiab?</p>
+    </header>
+    <div class="grid grid-3">
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3 data-i18n="why.1.t">Kliendid otsivad internetist</h3>
+        <p data-i18n="why.1.p">Enamik inimesi guugeldab enne ostu. Kui teid pole seal, valivad nad kellegi teise.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-i18n="why.2.t">Koduleht loob usaldust</h3>
+        <p data-i18n="why.2.p">Korralik leht näitab, et olete tõsiselt võetav. Hind, kontakt ja tööd on ühes kohas.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h3 data-i18n="why.3.t">Teid leitakse Google Mapsis</h3>
+        <p data-i18n="why.3.p">Lähedal asuvad kliendid otsivad kaardilt. Hea profiil toob neid ukse taha.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SERVICES ============ -->
+<section class="section" id="teenused">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="services.title">Mida me teeme</h2>
+      <p data-i18n="services.sub">Kõik, mida väikeettevõte internetis vajab. Ühest kohast.</p>
+    </header>
+    <div class="grid grid-4">
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3 data-i18n="services.1.t">Kodulehe tegemine</h3>
+        <p data-i18n="services.1.p">Kujundame ja ehitame teile kodulehe, mis töötab hästi telefonis ja arvutis.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg></div>
+        <h3 data-i18n="services.2.t">Igakuine hooldus</h3>
+        <p data-i18n="services.2.p">Hoiame lehe töökorras, turvalise ja ajakohasena, et teil poleks sellele mõelda vaja.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3 data-i18n="services.3.t">SEO</h3>
+        <p data-i18n="services.3.p">Seadistame lehe nii, et Google saaks aru, kes te olete, ja näitaks teid õigetele inimestele.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h3 data-i18n="services.4.t">Google Maps profiil</h3>
+        <p data-i18n="services.4.p">Seadistame teie Google'i ettevõtteprofiili, et lähedal olevad kliendid teid kaardilt leiaksid.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PRICING ============ -->
+<section class="section section-alt" id="hinnad">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="pricing.title">Selged hinnad. Ilma üllatusteta.</h2>
+      <p data-i18n="pricing.sub">Valige pakett. Täpse hinna ütleme pärast lühikest juttu.</p>
+    </header>
+    <div class="grid grid-3 pricing">
+      <article class="card price-card reveal">
+        <h3 data-i18n="pricing.basic.name">Baaskoduleht</h3>
+        <p class="price"><small data-i18n="pricing.from">alates</small> 150 €</p>
+        <p class="price-for" data-i18n="pricing.basic.for">Kui vajate lihtsat visiitkaarti internetis.</p>
+        <ul class="checks">
+          <li data-i18n="pricing.basic.1">Üheleheline koduleht</li>
+          <li data-i18n="pricing.basic.2">Sobib telefonile ja arvutile</li>
+          <li data-i18n="pricing.basic.3">Kontaktivorm</li>
+          <li data-i18n="pricing.basic.4">Põhiline SEO</li>
+        </ul>
+        <a class="btn btn-secondary btn-block" href="#kontakt" data-service="website" data-i18n="cta.quote">Küsi pakkumist</a>
+      </article>
+      <article class="card price-card featured reveal">
+        <span class="badge" data-i18n="pricing.popular">Kõige populaarsem</span>
+        <h3 data-i18n="pricing.biz.name">Ärikoduleht</h3>
+        <p class="price"><small data-i18n="pricing.from">alates</small> 300 €</p>
+        <p class="price-for" data-i18n="pricing.biz.for">Kui soovite rohkem kliente ja selget ülevaadet teenustest.</p>
+        <ul class="checks">
+          <li data-i18n="pricing.biz.1">Kuni 5 lehte</li>
+          <li data-i18n="pricing.biz.2">Teenuste ja hindade esitlus</li>
+          <li data-i18n="pricing.biz.3">Kontaktivorm ja kaart</li>
+          <li data-i18n="pricing.biz.4">Põhiline SEO</li>
+          <li data-i18n="pricing.biz.5">Google'i ettevõtteprofiili seadistus</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="#kontakt" data-service="website" data-i18n="cta.quote">Küsi pakkumist</a>
+      </article>
+      <article class="card price-card reveal">
+        <h3 data-i18n="pricing.prem.name">Premium koduleht</h3>
+        <p class="price"><small data-i18n="pricing.upto">kuni</small> 500 €</p>
+        <p class="price-for" data-i18n="pricing.prem.for">Kui vajate rohkem kui tavapärast lehte.</p>
+        <ul class="checks">
+          <li data-i18n="pricing.prem.1">Kuni 10 lehte</li>
+          <li data-i18n="pricing.prem.2">Eraldi tehtud kujundus</li>
+          <li data-i18n="pricing.prem.3">Galerii, blogi või broneerimine</li>
+          <li data-i18n="pricing.prem.4">Põhjalikum SEO</li>
+          <li data-i18n="pricing.prem.5">Google'i ettevõtteprofiili seadistus</li>
+        </ul>
+        <a class="btn btn-secondary btn-block" href="#kontakt" data-service="website" data-i18n="cta.quote">Küsi pakkumist</a>
+      </article>
+    </div>
+    <div class="addons reveal">
+      <div class="addon">
+        <strong data-i18n="pricing.maint">Hooldus 30 €/kuu</strong>
+        <span data-i18n="pricing.maint.p">Uuendused, turvalisus ja väikesed muudatused.</span>
+      </div>
+      <div class="addon">
+        <strong data-i18n="pricing.seo">SEO ja Google Maps – küsi pakkumist</strong>
+        <span data-i18n="pricing.seo.p">Hind sõltub ettevõttest. Ütleme selle ausalt ette.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. HOW IT WORKS ============ -->
+<section class="section" id="kuidas">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="steps.title">Kuidas see käib</h2>
+      <p data-i18n="steps.sub">Neli lihtsat sammu. Te ei pea midagi tehnilist oskama.</p>
+    </header>
+    <ol class="timeline">
+      <li class="step reveal">
+        <span class="step-num">1</span>
+        <h3 data-i18n="steps.1.t">Võtate meiega ühendust</h3>
+        <p data-i18n="steps.1.p">Kirjutage või helistage. Vastame 24 tunni jooksul.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">2</span>
+        <h3 data-i18n="steps.2.t">Plaanime koos</h3>
+        <p data-i18n="steps.2.p">Räägime, mida vajate. Saate hinna ja ajakava.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">3</span>
+        <h3 data-i18n="steps.3.t">Ehitame lehe valmis</h3>
+        <p data-i18n="steps.3.p">Näitame vahepealt tulemust. Teete soovi korral muudatusi.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">4</span>
+        <h3 data-i18n="steps.4.t">Käivitame ja toetame</h3>
+        <p data-i18n="steps.4.p">Leht läheb üles. Jääme kõrvale, kui küsimusi tekib.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 6. TEAM ============ -->
+<section class="section section-alt" id="meeskond">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="team.title">Noor ja ägedalt motiveeritud meeskond</h2>
+      <p data-i18n="team.sub">Olete otse meiega kontaktis. Mitte müügiosakonnaga, vaid inimestega, kes teie lehe teevad.</p>
+    </header>
+    <div class="grid grid-2 team">
+      <article class="card team-card reveal">
+        <!-- TODO: asenda foto: <img src="img/sebastian.jpg" alt="Sebastian"> -->
+        <div class="avatar" role="img" aria-label="Foto tuleb siia / Photo goes here"><span>S</span></div>
+        <h3>Sebastian</h3>
+        <p class="role" data-i18n="team.seb.role">Veebiarendaja</p>
+        <p data-i18n="team.seb.p">Tegeleb veebiarendusega umbes 4 aastat. Vastutab lehtede ülesehituse ja kvaliteedi eest.</p>
+        <p class="placeholder-note" data-i18n="team.photo">[Päris foto tuleb siia]</p>
+      </article>
+      <article class="card team-card reveal">
+        <div class="avatar" role="img" aria-label="Foto tuleb siia / Photo goes here"><span>D</span></div>
+        <h3>Daniel</h3>
+        <p class="role" data-i18n="team.dan.role">Veebiarendaja</p>
+        <p data-i18n="team.dan.p">Tegeleb veebiarendusega umbes 1 aasta. Toob värsked ideed ja hoolitseb detailide eest.</p>
+        <p class="placeholder-note" data-i18n="team.photo">[Päris foto tuleb siia]</p>
+      </article>
+      <!-- Kolmanda liikme lisamiseks kopeeri üks article ülal ja vaheta .grid-2 klass vastu .grid-3 -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. PORTFOLIO ============ -->
+<section class="section" id="tood">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="work.title">Meie tööd</h2>
+      <p data-i18n="work.sub">Siia tulevad meie päris projektid.</p>
+    </header>
+    <div class="grid grid-3">
+      <!-- Asenda .work-img sisu: <img src="img/projekt1.jpg" alt="..." loading="lazy"> -->
+      <article class="card work-card reveal"><div class="work-img g1"><span data-i18n="work.ph">Näidispilt</span></div><div class="work-body"><h3 data-i18n="work.client">[Kliendi nimi]</h3><p data-i18n="work.desc">[Lühike kirjeldus, mida tegime]</p></div></article>
+      <article class="card work-card reveal"><div class="work-img g2"><span data-i18n="work.ph">Näidispilt</span></div><div class="work-body"><h3 data-i18n="work.client">[Kliendi nimi]</h3><p data-i18n="work.desc">[Lühike kirjeldus, mida tegime]</p></div></article>
+      <article class="card work-card reveal"><div class="work-img g3"><span data-i18n="work.ph">Näidispilt</span></div><div class="work-body"><h3 data-i18n="work.client">[Kliendi nimi]</h3><p data-i18n="work.desc">[Lühike kirjeldus, mida tegime]</p></div></article>
+      <article class="card work-card reveal"><div class="work-img g4"><span data-i18n="work.ph">Näidispilt</span></div><div class="work-body"><h3 data-i18n="work.client">[Kliendi nimi]</h3><p data-i18n="work.desc">[Lühike kirjeldus, mida tegime]</p></div></article>
+      <article class="card work-card reveal"><div class="work-img g5"><span data-i18n="work.ph">Näidispilt</span></div><div class="work-body"><h3 data-i18n="work.client">[Kliendi nimi]</h3><p data-i18n="work.desc">[Lühike kirjeldus, mida tegime]</p></div></article>
+      <article class="card work-card reveal"><div class="work-img g6"><span data-i18n="work.ph">Näidispilt</span></div><div class="work-body"><h3 data-i18n="work.client">[Kliendi nimi]</h3><p data-i18n="work.desc">[Lühike kirjeldus, mida tegime]</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. TESTIMONIALS (tühjad kohatäited, EI MINGEID VÄLJAMÕELDUD ARVAMUSI) ============ -->
+<section class="section section-alt" id="arvamused">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="reviews.title">Mida kliendid ütlevad</h2>
+      <p data-i18n="reviews.sub">Siia lisame päris klientide tagasiside.</p>
+    </header>
+    <div class="grid grid-3">
+      <!-- Asenda kohatäide: <blockquote>"..."</blockquote><p class="who">Nimi, ettevõte</p> -->
+      <figure class="card review-ph reveal"><p data-i18n="reviews.ph">[Siia tuleb päris kliendi arvustus]</p><figcaption data-i18n="reviews.who">[Nimi, ettevõte]</figcaption></figure>
+      <figure class="card review-ph reveal"><p data-i18n="reviews.ph">[Siia tuleb päris kliendi arvustus]</p><figcaption data-i18n="reviews.who">[Nimi, ettevõte]</figcaption></figure>
+      <figure class="card review-ph reveal"><p data-i18n="reviews.ph">[Siia tuleb päris kliendi arvustus]</p><figcaption data-i18n="reviews.who">[Nimi, ettevõte]</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. FAQ ============ -->
+<section class="section" id="kkk">
+  <div class="container narrow">
+    <header class="section-head reveal">
+      <h2 data-i18n="faq.title">Korduma kippuvad küsimused</h2>
+    </header>
+    <div class="faq reveal">
+      <details>
+        <summary data-i18n="faq.1.q">Kui kaua kodulehe valmimine aega võtab?</summary>
+        <p data-i18n="faq.1.a">Lihtne leht valmib tavaliselt 1–2 nädalaga. Suurem leht võtab kauem. Täpse aja ütleme pärast esimest juttu.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.2.q">Mida pean ise andma?</summary>
+        <p data-i18n="faq.2.a">Logo, pildid ja tekstid, kui need on olemas. Kui pole, aitame neid koos teha. Peaasi, et räägite meile oma ettevõttest.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.3.q">Kas saan lehte ise muuta?</summary>
+        <p data-i18n="faq.3.a">Jah, kui soovite. Näitame, kuidas. Võite ka paluda muudatused meie teha, hooldusega on see lihtne.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.4.q">Mida hooldus sisaldab?</summary>
+        <p data-i18n="faq.4.a">Uuendused, turvalisuse eest hoolitsemise ja väikesed muudatused tekstides ja piltides. Hind on 30 € kuus.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq.5.q">Kas aitate domeeni ja hostinguga?</summary>
+        <p data-i18n="faq.5.a">Jah. Aitame valida, osta ja seadistada. Domeen ja hosting on eraldi kulu, ütleme selle hinna ette.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. CONTACT ============ -->
+<section class="section contact" id="kontakt">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 data-i18n="contact.title">Alustame teie kodulehega juba täna.</h2>
+      <p data-i18n="contact.sub">Kirjutage paar rida. Vastame 24 tunni jooksul.</p>
+    </header>
+    <div class="contact-grid">
+      <form class="card form reveal" id="contact-form" novalidate>
+        <div class="field">
+          <label for="f-name" data-i18n="form.name">Teie nimi</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-biz" data-i18n="form.biz">Ettevõtte nimi</label>
+          <input id="f-biz" name="business" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email" data-i18n="form.email">E-post</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-phone" data-i18n="form.phone">Telefon</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="field full">
+          <label for="f-service" data-i18n="form.service">Mis teenus huvitab?</label>
+          <select id="f-service" name="service">
+            <option value="website" data-i18n="form.s.website">Kodulehe tegemine</option>
+            <option value="maintenance" data-i18n="form.s.maint">Kodulehe hooldus</option>
+            <option value="seo" data-i18n="form.s.seo">SEO</option>
+            <option value="maps" data-i18n="form.s.maps">Google Maps profiil</option>
+            <option value="other" data-i18n="form.s.other">Muu / pole kindel</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-msg" data-i18n="form.msg">Sõnum</label>
+          <textarea id="f-msg" name="message" rows="4" required></textarea>
+        </div>
+        <button class="btn btn-primary btn-block full" type="submit" data-i18n="form.send">Saada päring</button>
+        <p class="form-note full" id="form-note" role="status" aria-live="polite" data-i18n="form.note">Vastame 24 tunni jooksul.</p>
+      </form>
+
+      <aside class="contact-info reveal">
+        <h3 data-i18n="contact.direct">Või võtke ühendust otse</h3>
+        <ul>
+          <li>
+            <span class="icon-box small"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <a href="mailto:[EMAIL]" id="contact-email">[EMAIL]</a>
+          </li>
+          <li>
+            <span class="icon-box small"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+            <a href="tel:[PHONE]" id="contact-phone">[PHONE]</a>
+          </li>
+        </ul>
+        <p class="guarantee">
+          <svg class="ico-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span data-i18n="trust.reply">Vastame 24 tunni jooksul</span>
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 11. FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo logo-light" href="#top">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 10l5 12 2-5 2 5 5-12" stroke="#0f172a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Veebihub
+      </a>
+      <p class="tagline" data-i18n="footer.tagline">Kodulehed, mis toovad kliente.</p>
+    </div>
+    <div>
+      <p><a href="mailto:[EMAIL]" class="js-email">[EMAIL]</a></p>
+      <p><a href="tel:[PHONE]" class="js-phone">[PHONE]</a></p>
+    </div>
+    <div>
+      <p data-i18n="footer.student">Õpilasfirma</p>
+      <p>© <span id="year">2026</span> Veebihub. <span data-i18n="footer.rights">Kõik õigused kaitstud.</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
