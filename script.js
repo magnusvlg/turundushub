@@ -1,9 +1,11 @@
 /* ===== Turundushub – script ===== */
 
-/* 1) CONTACT DETAILS – replace the two placeholders below, nothing else needs editing. */
+/* 1) CONTACT DETAILS */
 const CONFIG = {
-  email: "[EMAIL]",   // e.g. "info@turundushub.ee"
-  phone: "[PHONE]"    // e.g. "+372 5555 5555"
+  email: "of.turundushub@gmail.com",
+  // Formspree form address, e.g. "https://formspree.io/f/abcdwxyz".
+  // While empty, the form falls back to opening the visitor's email app.
+  formEndpoint: ""
 };
 
 /* 2) ENGLISH TEXT. Estonian is the text already written in index.html. */
@@ -75,14 +77,18 @@ const EN = {
 const MSG = {
   et: {
     invalid: "Palun täitke nimi, e-post ja sõnum.",
-    noContact: "E-posti aadress pole veel lisatud. Palun helistage meile.",
+    sending: "Saadan...",
+    sent: "Aitäh! Sõnum on saadetud. Vastame 24 tunni jooksul.",
+    failed: "Saatmine ebaõnnestus. Palun kirjutage meile otse: ",
     opened: "Avasime teie e-posti programmi. Vajutage seal „Saada“.",
     subjectPrefix: "Päring Turundushubi kodulehelt",
     lines: ["Nimi", "Ettevõte", "E-post", "Telefon", "Teenus"]
   },
   en: {
     invalid: "Please fill in your name, email and message.",
-    noContact: "Our email address has not been added yet. Please call us.",
+    sending: "Sending...",
+    sent: "Thank you! Your message was sent. We reply within 24 hours.",
+    failed: "Sending failed. Please email us directly: ",
     opened: "We opened your email app. Press “Send” there.",
     subjectPrefix: "Enquiry from the Turundushub website",
     lines: ["Name", "Business", "Email", "Phone", "Service"]
@@ -113,7 +119,6 @@ function setLang(next) {
     const text = dict[n.dataset.i18n];
     if (text !== undefined) n.innerHTML = text;
   });
-  document.getElementById("form-note").className = "form-note full"; // clear old error/success colour
   document.title = META[next].title;
   document.querySelector('meta[name="description"]').content = META[next].desc;
   document.querySelectorAll(".lang-switch button").forEach(b => {
@@ -133,48 +138,69 @@ if (saved === "en") setLang("en");
 if (isSet(CONFIG.email)) {
   document.querySelectorAll("#contact-email, .js-email").forEach(a => { a.href = "mailto:" + CONFIG.email; a.textContent = CONFIG.email; });
 }
-if (isSet(CONFIG.phone)) {
-  const tel = CONFIG.phone.replace(/[^\d+]/g, "");
-  document.querySelectorAll("#contact-phone, .js-phone").forEach(a => { a.href = "tel:" + tel; a.textContent = CONFIG.phone; });
-}
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ---------- Pricing buttons preselect the service ---------- */
 document.querySelectorAll("[data-service]").forEach(a =>
   a.addEventListener("click", () => { document.getElementById("f-service").value = a.dataset.service; }));
 
-/* ---------- Contact form (opens the visitor's email app) ---------- */
+/* ---------- Contact form ---------- */
 const form = document.getElementById("contact-form");
 const note = document.getElementById("form-note");
+const submitBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener("submit", e => {
+function say(text, kind) {
+  note.removeAttribute("data-i18n"); // stop the language switch from overwriting this message
+  note.className = "form-note full" + (kind ? " " + kind : "");
+  note.textContent = text;
+}
+
+form.addEventListener("submit", async e => {
   e.preventDefault();
   const m = MSG[lang];
   const f = form.elements;
-  const required = [f.name, f.email, f.message];
   let ok = true;
-  required.forEach(el => {
+  [f.name, f.email, f.message].forEach(el => {
     const bad = !el.value.trim() || (el.type === "email" && !el.checkValidity());
     el.classList.toggle("invalid", bad);
     if (bad) ok = false;
   });
-  note.className = "form-note full";
-  if (!ok) { note.textContent = m.invalid; note.classList.add("err"); return; }
-  if (!isSet(CONFIG.email)) { note.textContent = m.noContact; note.classList.add("err"); return; }
+  if (!ok) { say(m.invalid, "err"); return; }
+  if (f._gotcha.value) return; // spam trap: real visitors never fill this in
 
   const service = f.service.options[f.service.selectedIndex].text;
+  const data = {
+    name: f.name.value.trim(), business: f.business.value.trim(), email: f.email.value.trim(),
+    phone: f.phone.value.trim(), service, message: f.message.value.trim()
+  };
+
+  if (CONFIG.formEndpoint) {
+    submitBtn.disabled = true;
+    say(m.sending);
+    try {
+      const res = await fetch(CONFIG.formEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      form.reset();
+      say(m.sent, "ok");
+    } catch (err) {
+      say(m.failed + CONFIG.email, "err");
+    } finally {
+      submitBtn.disabled = false;
+    }
+    return;
+  }
+
+  // Fallback while no Formspree address is set: open the visitor's email app.
   const body = [
-    `${m.lines[0]}: ${f.name.value.trim()}`,
-    `${m.lines[1]}: ${f.business.value.trim()}`,
-    `${m.lines[2]}: ${f.email.value.trim()}`,
-    `${m.lines[3]}: ${f.phone.value.trim()}`,
-    `${m.lines[4]}: ${service}`,
-    "",
-    f.message.value.trim()
+    `${m.lines[0]}: ${data.name}`, `${m.lines[1]}: ${data.business}`, `${m.lines[2]}: ${data.email}`,
+    `${m.lines[3]}: ${data.phone}`, `${m.lines[4]}: ${service}`, "", data.message
   ].join("\n");
   window.location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(m.subjectPrefix)}&body=${encodeURIComponent(body)}`;
-  note.textContent = m.opened;
-  note.classList.add("ok");
+  say(m.opened, "ok");
 });
 
 /* ---------- Scroll reveal ---------- */
